@@ -1,6 +1,23 @@
-#tv{
-   height: 300px;
-   width: 700px;
-   border: 2px solid #2222;
-   border-radius: 3px;
+/* Full Section */
+*{
+   margin: 0;
+   padding: 0;
+   text-decoration: 0;
+   box-sizing: border-box;
 }
+
+section{
+   max-width: 1200px;
+   width: 100%;
+   margin: 5%;
+}
+/* TV */
+#tv-screen{
+   height: 375px;
+   max-width: 700px;
+   width: 100%;
+   border: 2px solid #2222;
+   border-radius: 2px;
+}
+
+/* Remote */
