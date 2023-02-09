@@ -1,6 +1,6 @@
    const tela = document.getElementById("tv-screen");
    let isPower = false;
-   let channel = 3;
+   let channel = 13;
    let volume = 5;
    
 function power(){
@@ -20,13 +20,19 @@ function home(){
 
 function channelUp(){
   if (isPower){
-      tela.innerHTML  = `Canal +`
+      if (channel < 13){
+         channel += 1
+      tela.innerHTML = `Canal ${channel}`
+      }
    }
 }
 
 function channelDown(){
   if (isPower){
-      tela.innerHTML  = `Canal -`
+      if (channel > 1){
+         channel -= 1
+      tela.innerHTML = `Canal ${channel}`
+      }
    }
 }
 
@@ -35,7 +41,6 @@ function volumeUp(){
       if(volume < 100){
          volume += 1
       tela.innerHTML  = `Volume ${volume}`
-      console.log(volume)
       }
    }
 }
@@ -45,7 +50,6 @@ function volumeDown(){
       if(volume >= 1){
          volume -= 1
       tela.innerHTML  = `Volume ${volume}`
-      console.log(volume)
       }
    }
 }
