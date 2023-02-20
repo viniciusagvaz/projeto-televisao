@@ -13,11 +13,13 @@ section{
 }
 /* TV */
 #tv-screen{
+   background-repeat: no-repeat;
+   background-size: cover;
    height: 375px;
    max-width: 700px;
    width: 100%;
-   border: 2px solid #2222;
-   border-radius: 2px;
+   border: 20px solid #222222;
+   border-radius: 4px;
 }
 
 /* Remote */

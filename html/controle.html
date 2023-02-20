@@ -15,21 +15,15 @@
       </div>
 
       <div id="remote-area">
-         <div id="remote-body">
+         <div id="remote-body" class="d-flex flex-column gap-lg-5">
             <div id="remote-top">
                <button id="remote-power" type="button" onclick="power()">
                   Power
                </button>
             </div>
 
-            <div id="remote-middle">
-               <button id="remote-home" type="button" onclick="home()">
-                  Home
-               </button>
-            </div>
-
-            <div id="remote-bottom">
-               <div id="remote-channel-command">
+            <div id="remote-bottom" class="d-flex gap-5">
+               <div id="remote-channel-command"  class="d-flex flex-column" >
                   <button id="remote-ch+" type="button" onclick="channelUp()">
                      CH+
                   </button>
@@ -39,7 +33,7 @@
                   </button>
                </div>
 
-               <div id="remote-volume-command">
+               <div id="remote-volume-command" class="d-flex flex-column">
                   <button id="remote-vol+"type="button" onclick="volumeUp()">
                      Vol+
                   </button>
