@@ -8,20 +8,19 @@
    box-sizing: border-box;
 }
 
-section{
-   margin-left: auto;
-   margin-right: auto;
-   padding: 100px;
-   border: 1px solid;
+#full-section{
+   margin: 100px 50px;
+   max-width: 1900px;
+   width: 100%;
 }
 /* TV */
 #tv-screen{
    background-repeat: no-repeat;
    background-size: cover;
    background-image: linear-gradient(to right,#000000,#343434,#000000e4);
-   min-height: 600px;
-   max-width: 1200px;
    width: 100%;
+   max-width: 1400px;
+   min-height: 800px;
    border: 20px solid #000000;
    border-radius: 4px;
    box-shadow:  2px 2px #878484;

@@ -1,7 +1,8 @@
    const tela = document.getElementById("tv-screen");
    let isPower = false;
    let channel = 1;
-   let volume = 2;
+   let volume = 3;
+  
    
 function power(){
    if (!isPower){
@@ -20,10 +21,14 @@ function home(){
 
 function channelUp(){
   if (isPower){
-      if (channel < 5){
+      if (channel <= 1){
          channel += 1
-      tela.innerHTML = `Canal ${channel}`
-      tela.style.backgroundImage = "url(https://media.tenor.com/88dnH_mHRLAAAAAC/static-tv-static.gif)";
+      // tela.innerHTML = `Canal ${channel}
+
+      tela.style.backgroundImage = "url(https://media.tenor.com/xEKNZ2vapXIAAAAC/dinosaur-king-news.gif)";
+      }else if (channel = 3){
+         tela.innerHTML = " "
+         tela.style.backgroundImage = "url(https://media.tenor.com/9MjArHcC8qkAAAAC/pleasestandby-lol.gif)"
       }
    }
 }
@@ -32,11 +37,13 @@ function channelDown(){
   if (isPower){
       if (channel > 1){
          channel -= 1
-      tela.innerHTML = `Canal ${channel}`
-      tela.style.backgroundImage = "url(https://media.tenor.com/O51PN7jtRc0AAAAC/april-5centimeters-per-second.gif)";
+      // tela.innerHTML = `Canal ${channel}
+
+      tela.style.backgroundImage = "url(https://media.tenor.com/O51PN7jtRc0AAAAC/april-5centimeters-per-second.gif)"
       }
    }
 }
+
 
 function volumeUp(){
    if (isPower){
