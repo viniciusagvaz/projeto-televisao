@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
 /* Full Section */
 *{
    margin: 0;
@@ -7,19 +9,62 @@
 }
 
 section{
-   max-width: 1200px;
-   width: 100%;
-   margin: 5%;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 100px;
+   border: 1px solid;
 }
 /* TV */
 #tv-screen{
    background-repeat: no-repeat;
    background-size: cover;
-   height: 375px;
-   max-width: 700px;
+   background-image: linear-gradient(to right,#000000,#343434,#000000e4);
+   min-height: 600px;
+   max-width: 1200px;
    width: 100%;
-   border: 20px solid #222222;
+   border: 20px solid #000000;
    border-radius: 4px;
+   box-shadow:  2px 2px #878484;
 }
 
 /* Remote */
+
+#remote-body{
+   border: 6px solid #222;
+   padding: 15px 10px;
+   border-radius: 15px ;
+   background-image: linear-gradient(to bottom,#000000,#444141,#000000);
+   box-shadow:  4px 2px #878484;
+}
+
+#remote-body button:active{
+   box-shadow: inset 0px 2px 0 #222;
+
+}
+
+#remote-top{
+   margin-bottom: 200px;
+}
+
+#remote-top button{
+   padding: 8px;
+   border-radius: 50%;
+   background-color: rgba(251, 41, 41, 0.936);
+   box-shadow:  1px 1px #535151;
+}
+
+#remote-bottom{
+   padding-bottom: 30px;
+}
+
+#remote-bottom button{
+   border-radius: 5px;
+   padding: 3px 4px;
+   margin: 1px;
+   box-shadow:  1px 2px #878484;
+}
+
+#remote-brand{
+   color: #eee;
+   font-family: Satisfy ,Georgia, 'Times New Roman', Times, serif;
+}
