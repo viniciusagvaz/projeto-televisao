@@ -8,62 +8,114 @@
    box-sizing: border-box;
 }
 
-#full-section{
-   margin: 100px 50px;
-   max-width: 1900px;
-   width: 100%;
-}
+section{
+   margin-top: 8%;
+ }
+ 
+
 /* TV */
-#tv-screen{
+#tv--area{
+  max-width: 1200px;
+}
+
+.tv--body{
+   position: relative;
+   width: 60vw;
+   height: 35vw;
+   border: 2vw solid #000000;
+   border-radius: 4px;
+}
+
+.tv--screen{
+   width: 100%;
+   height: 100%;
    background-repeat: no-repeat;
    background-size: cover;
    background-image: linear-gradient(to right,#000000,#343434,#000000e4);
-   width: 100%;
-   max-width: 1400px;
-   min-height: 800px;
-   border: 20px solid #000000;
-   border-radius: 4px;
-   box-shadow:  2px 2px #878484;
+   box-shadow:  1px 1px 1px #878484, inset 0.5px 0.5px  #878484;
 }
+
+.tv--brand{
+   position: absolute;
+   width: fit-content;
+   left: 50%;
+   right: 50%;
+   top: 100%;
+}
+
 
 /* Remote */
 
-#remote-body{
+#remote--area{
+   height: 24vw;
+   width: 12vw;
+   border: 3px solid greenyellow;
+}
+
+.remote--body{
+   position: relative;
+   width: 100%;
+   height: 100%;
    border: 6px solid #222;
-   padding: 15px 10px;
    border-radius: 15px ;
    background-image: linear-gradient(to bottom,#000000,#444141,#000000);
    box-shadow:  4px 2px #878484;
 }
 
-#remote-body button:active{
-   box-shadow: inset 0px 2px 0 #222;
-
+.remote--top{
+   position: absolute;
+   left: 10%;
+   top: 4%;
 }
 
-#remote-top{
-   margin-bottom: 200px;
-}
-
-#remote-top button{
-   padding: 8px;
-   border-radius: 50%;
+.remote--top button{
+   border-radius: 100%;
+   padding: 0.1rem;
    background-color: rgba(251, 41, 41, 0.936);
    box-shadow:  1px 1px #535151;
 }
 
-#remote-bottom{
-   padding-bottom: 30px;
+.remote--bottom{
+   position: sticky;
+   margin-top: 175%;
+   border: 1px solid red;
+}
+.channel--command{
+   border: 1px solid palegreen;
 }
 
-#remote-bottom button{
+.channel--command button,
+.volume--command button{
+   background-color: #000000;
+   border: ;
+   font-size: 0.8rem;
+   padding: 0.2rem;
+   border-radius: 2%;
+
+}
+
+.remote--brand{
+   position: absolute;
+   bottom: 0;
+   right: 30%;
+   left: 30%;
+   color: #eee;
+   font-family: Satisfy ,Georgia, 'Times New Roman', Times, serif;
+}
+
+/* 
+.remote--body button:active{
+   box-shadow: inset 0px 2px 0 #222;
+
+}
+
+.remote--bottom button{
    border-radius: 5px;
-   padding: 3px 4px;
-   margin: 1px;
    box-shadow:  1px 2px #878484;
 }
 
-#remote-brand{
-   color: #eee;
-   font-family: Satisfy ,Georgia, 'Times New Roman', Times, serif;
+.remote--top button{
+   border-radius: 50%;
+   background-color: rgba(251, 41, 41, 0.936);
+   box-shadow:  1px 1px #535151;
 }

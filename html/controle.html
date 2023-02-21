@@ -10,46 +10,52 @@
    <title>Television</title>
 </head>
 <body>
-   <section id="full-section"class="d-flex justify-content-between">
-      <div id="tv-screen">
 
+<section class="d-flex justify-content-center align-items-center container">
+   <div id="tv--area" class="container">
+      <div class="tv--body">
+         <div class="tv--screen">
+            <span class="tv--brand text-white">vaZtv</span>
+         </div>
       </div>
+   </div>
 
-      <div id="remote-area">
-         <div id="remote-body" class="d-flex flex-column">
-            <div id="remote-top">
-               <button id="remote-power" type="button" onclick="power()">
-                  <i class="fa-sharp fa-solid fa-power-off"></i>
+   <div id="remote--area" class="container">
+      <div class="remote--body">
+         <div class="remote--top">
+            <button class="remote-power" type="button" onclick="power()">
+               <i class="fa-sharp fa-solid fa-power-off text-white"></i>
+            </button>
+         </div>
+
+         <div class="remote--bottom d-flex justify-content-around">
+            <div class="channel--command d-flex flex-column">
+               <button class="chPlus" type="button" onclick="channelUp()">
+                  <i class="fa-solid fa-chevron-up text-white"></i>
+               </button>
+               
+               <button class="chMinus" type="button" onclick="channelDown()">
+                  <i class="fa-solid fa-chevron-down text-white"></i>
                </button>
             </div>
 
-            <div id="remote-bottom" class="d-flex gap-5">
-               <div id="remote-channel-command"  class="d-flex flex-column" >
-                  <button id="remote-ch+" type="button" onclick="channelUp()">
-                     <i class="fa-solid fa-chevron-up"></i>
-                  </button>
-                  
-                  <button id="remote-ch-" type="button" onclick="channelDown()">
-                     <i class="fa-solid fa-chevron-down"></i>
-                  </button>
-               </div>
+            <div class = "volume--command d-flex flex-column">
+               <button class="vol+"type="button" onclick="volumeUp()">
+                  <i class="fa-solid fa-plus text-white"></i>
+               </button>
 
-               <div id="remote-volume-command" class="d-flex flex-column">
-                  <button id="remote-vol+"type="button" onclick="volumeUp()">
-                     <i class="fa-solid fa-plus"></i>
-                  </button>
-                  <button id="remote-vol-" type="button" onclick="volumeDown()">
-                     <i class="fa-solid fa-minus"></i>
-                  </button>
-               </div>
-            </div>
-            
-            <div id="remote-brand" class="text-center">
-               vaZ tv
+               <button class="vol-" type="button" onclick="volumeDown()">
+                  <i class="fa-solid fa-minus text-white"></i>
+               </button>
             </div>
          </div>
+         
+         <div class="remote--brand text-white bg-black">
+            vaZ tv
+         </div>
       </div>
-   </section>
+   </div>
+</section>
 </body>
 </html>
 <script src="../js/controle.js"></script>

@@ -1,6 +1,6 @@
-   const tela = document.getElementById("tv-screen");
+   const tela = document.querySelector(".tv--screen");
    let isPower = false;
-   let channel = 1;
+   let channel = "";
    let volume = 3;
   
    
@@ -62,3 +62,19 @@ function volumeDown(){
       }
    }
 }
+
+
+/* links  gifs 
+Ping Pong
+https://i.gifer.com/origin/0b/0ba2a8bddd05276cc46a60a586def718.gif
+
+Dança
+
+
+
+Comida
+https://i.pinimg.com/originals/58/a6/59/58a6590300bcdebcaa97a93f742d516a.gif
+
+Filme
+https://64.media.tumblr.com/b65b71ba3d2502a13240863fcbb39fe5/a377ea866ef7130e-86/s540x810/7eeab75df7b5b34889eb20e6ab880e26be5b6bb1.gif
+*/
