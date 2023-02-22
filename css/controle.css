@@ -26,6 +26,8 @@ section{
 }
 
 .tv--screen{
+   display: flex;
+   flex-direction: column;
    width: 100%;
    height: 100%;
    background-repeat: no-repeat;
@@ -34,6 +36,20 @@ section{
    box-shadow:  1px 1px 1px #878484, inset 0.5px 0.5px  #878484;
 }
 
+/* Display */
+.info-vol-display{
+   width: 20%;
+   margin-left: 1%;
+   color: #fff;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.info-chn-display{
+   height: 60%;
+   margin: 1%;
+   color: #fff;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 /* Remote */
 
 #remote--area{
