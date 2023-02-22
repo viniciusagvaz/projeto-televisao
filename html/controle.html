@@ -11,14 +11,15 @@
 </head>
 <body>
 
-<section class="d-flex justify-content-center align-items-center container">
+<section class="d-flex justify-content-center align-items-center">
    <div id="tv--area" class="container">
       <div class="tv--body">
          <div class="tv--screen">
-            <span class="tv--brand text-white">vaZtv</span>
          </div>
       </div>
    </div>
+
+
 
    <div id="remote--area" class="container">
       <div class="remote--body">
@@ -28,8 +29,8 @@
             </button>
          </div>
 
-         <div class="remote--bottom d-flex justify-content-around">
-            <div class="channel--command d-flex flex-column">
+         <div class="remote--bottom d-flex justify-content-around text-center">
+            <div class="channel--command d-flex flex-column gap-2">
                <button class="chPlus" type="button" onclick="channelUp()">
                   <i class="fa-solid fa-chevron-up text-white"></i>
                </button>
@@ -39,7 +40,7 @@
                </button>
             </div>
 
-            <div class = "volume--command d-flex flex-column">
+            <div class = "volume--command d-flex flex-column gap-2">
                <button class="vol+"type="button" onclick="volumeUp()">
                   <i class="fa-solid fa-plus text-white"></i>
                </button>
@@ -48,10 +49,6 @@
                   <i class="fa-solid fa-minus text-white"></i>
                </button>
             </div>
-         </div>
-         
-         <div class="remote--brand text-white bg-black">
-            vaZ tv
          </div>
       </div>
    </div>

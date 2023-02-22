@@ -19,7 +19,6 @@ section{
 }
 
 .tv--body{
-   position: relative;
    width: 60vw;
    height: 35vw;
    border: 2vw solid #000000;
@@ -35,27 +34,15 @@ section{
    box-shadow:  1px 1px 1px #878484, inset 0.5px 0.5px  #878484;
 }
 
-.tv--brand{
-   position: absolute;
-   width: fit-content;
-   left: 50%;
-   right: 50%;
-   top: 100%;
-}
-
-
 /* Remote */
 
 #remote--area{
-   height: 24vw;
-   width: 12vw;
-   border: 3px solid greenyellow;
+   width: fit-content;
 }
 
 .remote--body{
-   position: relative;
-   width: 100%;
-   height: 100%;
+   height: 22vw;
+   width: 8vw;
    border: 6px solid #222;
    border-radius: 15px ;
    background-image: linear-gradient(to bottom,#000000,#444141,#000000);
@@ -63,52 +50,43 @@ section{
 }
 
 .remote--top{
-   position: absolute;
+   position: relative;
    left: 10%;
-   top: 4%;
+   top: 5%;
 }
 
+
 .remote--top button{
-   border-radius: 100%;
-   padding: 0.1rem;
-   background-color: rgba(251, 41, 41, 0.936);
+   position: absolute;
+   box-shadow: -2px 3px 0 #222, -4px 5px 0 #000;
+   background-color: rgba(255, 0, 0, 0.729);
+   padding: 0 0.2rem;
+   border-radius: 30%;
+   border: 1px solid #fff;
    box-shadow:  1px 1px #535151;
 }
 
 .remote--bottom{
-   position: sticky;
-   margin-top: 175%;
-   border: 1px solid red;
-}
-.channel--command{
-   border: 1px solid palegreen;
+   position: relative;
+   top: 50%;
 }
 
 .channel--command button,
 .volume--command button{
-   background-color: #000000;
-   border: ;
+   background-image: linear-gradient(to bottom,#000000,#444141,#000000);
+   box-shadow: -2px 3px 0 #222, -4px 5px 0 #000;
+   border: 2px double #eee;
+   padding: 0 0.2rem;
    font-size: 0.8rem;
-   padding: 0.2rem;
-   border-radius: 2%;
-
+   border-radius: 3px;
 }
 
-.remote--brand{
-   position: absolute;
-   bottom: 0;
-   right: 30%;
-   left: 30%;
-   color: #eee;
-   font-family: Satisfy ,Georgia, 'Times New Roman', Times, serif;
-}
-
-/* 
+ 
 .remote--body button:active{
-   box-shadow: inset 0px 2px 0 #222;
-
+   box-shadow: inset -4px 4px 0 #222;
 }
 
+/*
 .remote--bottom button{
    border-radius: 5px;
    box-shadow:  1px 2px #878484;
