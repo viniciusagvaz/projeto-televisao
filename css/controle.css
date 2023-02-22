@@ -85,15 +85,3 @@ section{
 .remote--body button:active{
    box-shadow: inset -4px 4px 0 #222;
 }
-
-/*
-.remote--bottom button{
-   border-radius: 5px;
-   box-shadow:  1px 2px #878484;
-}
-
-.remote--top button{
-   border-radius: 50%;
-   background-color: rgba(251, 41, 41, 0.936);
-   box-shadow:  1px 1px #535151;
-}
