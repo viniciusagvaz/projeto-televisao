@@ -27,7 +27,8 @@ section{
 
 .tv--screen{
    display: flex;
-   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
    width: 100%;
    height: 100%;
    background-repeat: no-repeat;
@@ -37,19 +38,14 @@ section{
 }
 
 /* Display */
+.info-chn-display,
 .info-vol-display{
-   width: 20%;
-   margin-left: 1%;
+   margin: 20% 3% 0 5%;
    color: #fff;
+   font-size: 1.4rem;
    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.info-chn-display{
-   height: 60%;
-   margin: 1%;
-   color: #fff;
-   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
 /* Remote */
 
 #remote--area{
