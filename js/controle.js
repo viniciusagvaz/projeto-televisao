@@ -3,9 +3,8 @@
    const displayChn = document.querySelector(".info-chn-display")
    
    let isPower = false;
-   let channel = 0
+   let channel = 1
    let volume = 0
-
 
    const channelInfo = [
       {
@@ -52,14 +51,23 @@
   
 
 // Power //
-
 function power(){
    if (!isPower){
       tela.style.backgroundImage = channelInfo[0].image;
+      displayChn.innerHTML = displayChn.innerHTML = 
+         `<i class="fa-solid fa-caret-right"
+             style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">
+             Channel ${channelInfo[0].channel}
+         </i>`
       isPower = true;
+      setTimeout(( )=>{
+         displayChn.innerHTML = " "
+    }, 1000)
    } else {
       tela.style.backgroundImage = ""
       isPower = false;
+      displayChn.innerHTML = " "
+      displayVol.innerHTML = " "
    }
 }
 
@@ -72,7 +80,6 @@ function channelUp(){
    {
       channel = 1
    }
-
    channelInfo.forEach((info) =>
    {
       if (info.channel == channel)
@@ -82,12 +89,14 @@ function channelUp(){
              style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">
              Channel ${info.channel}
          </i>`
-         tela.style.backgroundImage = info.image
+         tela.style.backgroundImage = info.image    
+         setTimeout(( )=>{
+            displayChn.innerHTML = " "
+       }, 1000)
       }
    });
- }
+ } 
 }
-
 
 function channelDown(){
    console.log("teste", channel)
@@ -106,6 +115,10 @@ function channelDown(){
              Channel ${info.channel}
           </i>`
          tela.style.backgroundImage = info.image
+         
+         setTimeout(( )=>{
+            displayChn.innerHTML = " "
+       }, 1000)
       }
    });
   }
@@ -118,6 +131,9 @@ function volumeUp(){
       if(volume < 50){
          volume += 5
       displayVol.innerHTML  = `<i class="fa-solid fa-volume-low" style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">  ${volume}</i>`
+      setTimeout(( )=>{
+         displayVol.innerHTML = " "
+    }, 1000)
       }else if(volume < 100){
          volume += 5
          displayVol.innerHTML  = 
@@ -126,6 +142,9 @@ function volumeUp(){
             style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)"> 
             ${volume}
           </i>`
+          setTimeout(( )=>{
+            displayVol.innerHTML = " "
+       }, 1000)
       }
    }
 }
@@ -140,11 +159,17 @@ function volumeDown(){
             style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)"> 
             ${volume}
          </i>`
+         setTimeout(( )=>{
+            displayVol.innerHTML = " "
+       }, 1000)
       }else{
          displayVol.innerHTML  = 
          `<i class="fa-solid fa-volume-mute" 
             style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">
           </i>`
+          setTimeout(( )=>{
+            displayVol.innerHTML = " "
+       }, 1000)
       }
    }
 }
