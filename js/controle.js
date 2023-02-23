@@ -68,6 +68,7 @@ const channelInfo = [
          displayChn.innerHTML = " "
     }, 1000)
    } else {
+      channel = 1
       tela.style.backgroundImage = ""
       isPower = false;
       displayChn.innerHTML = " "
@@ -99,7 +100,7 @@ function channelUp(){
        }, 1000)
       }
    });
- } 
+ }
 }
 
 function channelDown(){
