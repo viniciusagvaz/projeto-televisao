@@ -127,7 +127,7 @@ section{
 
   .tv--screen{
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-image: linear-gradient(to right,#000000,#343434,#000000e4);
     box-shadow:  1px 1px #878484, inset 0.2px 0.3px #878484;
  }
@@ -156,7 +156,7 @@ section{
 
   .tv--screen{
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-image: linear-gradient(to right,#000000,#343434,#000000e4);
     box-shadow:  1px 1px #878484, inset 0.2px 0.3px #878484;
  }
