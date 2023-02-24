@@ -11,48 +11,48 @@
 </head>
 <body>
 <section class="d-flex justify-content-center align-items-center">
-   <div id="tv--area">
-      <div class="tv--body">
-         <div class="tv--screen">
-            <span class="info-vol-display">   
-            </span>
-            <span class="info-chn-display">   
-            </span>
-         </div>
+  <div id="tv--area">
+    <div class="tv--body">
+      <div class="tv--screen">
+        <span class="info-vol-display">   
+        </span>
+        <span class="info-chn-display">   
+        </span>
       </div>
-   </div>
+    </div>
+  </div>
 
-   <div id="remote--area" class="container">
+  <div id="remote--area" class="container">
       <div class="remote--body">
-         <div class="remote--top">
-            <button class="remote-power" type="button" onclick="power()">
-               <i class="fa-sharp fa-solid fa-power-off text-white"></i>
+        <div class="remote--top">
+          <button class="remote-power" type="button" onclick="power()">
+           <i class="fa-sharp fa-solid fa-power-off text-white">
+            </i>
+          </button>
+        </div>
+
+        <div class="remote--bottom d-flex justify-content-around text-center">
+          <div class = "volume--command d-flex flex-column gap-2">
+            <button class="vol+"type="button" onclick="volumeUp()">
+              <i class="fa-solid fa-plus text-white"></i>
             </button>
-         </div>
+            
+            <button class="vol-" type="button" onclick="volumeDown()">
+              <i class="fa-solid fa-minus text-white"></i>
+            </button>
+          </div>
 
-         <div class="remote--bottom d-flex justify-content-around text-center">
-            <div class="channel--command d-flex flex-column gap-2">
-               <button class="chPlus" type="button" onclick="channelUp()">
-                  <i class="fa-solid fa-chevron-up text-white"></i>
-               </button>
-               
-               <button class="chMinus" type="button" onclick="channelDown()">
-                  <i class="fa-solid fa-chevron-down text-white"></i>
-               </button>
-            </div>
-
-            <div class = "volume--command d-flex flex-column gap-2">
-               <button class="vol+"type="button" onclick="volumeUp()">
-                  <i class="fa-solid fa-plus text-white"></i>
-               </button>
-
-               <button class="vol-" type="button" onclick="volumeDown()">
-                  <i class="fa-solid fa-minus text-white"></i>
-               </button>
-            </div>
-         </div>
+          <div class="channel--command d-flex flex-column gap-2">
+            <button class="chPlus" type="button" onclick="channelUp()">
+            <i class="fa-solid fa-chevron-up text-white"></i>
+            </button>
+          <button class="chMinus" type="button" onclick="channelDown()">
+          <i class="fa-solid fa-chevron-down text-white"></i>
+          </button>        
+          </div>
+        </div>
       </div>
-   </div>
+  </div>
 </section>
 </body>
 </html>

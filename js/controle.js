@@ -108,7 +108,7 @@ function channelUp(){
          tela.style.backgroundImage = info.image    
          setTimeout(( )=>{
             displayChn.innerHTML = " "
-       }, 1000)
+       }, 2000)
       }
    });
  } 
@@ -134,7 +134,7 @@ function channelDown(){
          
          setTimeout(( )=>{
             displayChn.innerHTML = " "
-       }, 1000)
+       }, 2000)
       }
    });
   }
@@ -149,7 +149,7 @@ function volumeUp(){
       displayVol.innerHTML  = `<i class="fa-solid fa-volume-low" style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">  ${volume}</i>`
       setTimeout(( )=>{
          displayVol.innerHTML = " "
-    }, 1000)
+    }, 2000)
       }else if(volume < 100){
          volume += 5
          displayVol.innerHTML  = 
@@ -160,7 +160,7 @@ function volumeUp(){
           </i>`
           setTimeout(( )=>{
             displayVol.innerHTML = " "
-       }, 1000)
+       }, 2000)
       }
    }
 }
@@ -177,7 +177,7 @@ function volumeDown(){
          </i>`
          setTimeout(( )=>{
             displayVol.innerHTML = " "
-       }, 1000)
+       }, 2000)
       }else{
          displayVol.innerHTML  = 
          `<i class="fa-solid fa-volume-mute" 
@@ -185,7 +185,7 @@ function volumeDown(){
           </i>`
           setTimeout(( )=>{
             displayVol.innerHTML = " "
-       }, 1000)
+       }, 2000)
       }
    }
 }
