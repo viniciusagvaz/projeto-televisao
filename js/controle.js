@@ -61,7 +61,7 @@ const channelInfo = [
   },
   {
     channel: 14,
-    image:"url(https://thumbs.gfycat.com/GraciousImpishCapybara-size_restricted.gif)"
+    image:"url(http://78.media.tumblr.com/0ab602b708b22093a4e9989a4498bbdb/tumblr_p1uvzudrPx1rad1dao1_500.gif)"
    }
 ]
    
