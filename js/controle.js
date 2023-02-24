@@ -50,6 +50,18 @@ const channelInfo = [
    {
       channel: 11,
       image:"url(https://media.tenor.com/qbLFlt_O0UQAAAAd/kimi-ni-nowa-your-name.gif)"
+   },
+   {
+    channel: 12,
+      image:"url(https://gifimage.net/wp-content/uploads/2017/09/anime-sunset-gif-5.gif)"
+   },
+   {
+    channel: 13,
+    image:"url(https://media1.tenor.com/images/1ff2eaa719725f41116ef7a2e6d81d0b/tenor.gif?itemid=4724980)"
+  },
+  {
+    channel: 14,
+    image:"url(https://thumbs.gfycat.com/GraciousImpishCapybara-size_restricted.gif)"
    }
 ]
    
@@ -108,7 +120,7 @@ function channelDown(){
   if (isPower){
    channel--
    if (channel < 1){
-      channel = 11
+      channel = 14
    }
    channelInfo.forEach((info) =>{
       if (info.channel == channel){
