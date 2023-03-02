@@ -75,6 +75,8 @@ const channelInfo = [
   },
 ];
 
+let channelsChange = channelInfo.lastIndex("");
+
 // Power //
 function power() {
   if (!isPower) {
@@ -90,9 +92,7 @@ function power() {
         tela.style.backgroundImage = info.image;
       }
     });
-
-    displayChn.innerHTML =
-      displayChn.innerHTML = `<i class="fa-solid fa-caret-right"
+    displayChn.innerHTML = `<i class="fa-solid fa-caret-right"
       style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">
          Channel ${channel}
       </i>`;
@@ -110,7 +110,6 @@ function power() {
 }
 
 // Channel //
-
 function channelUp() {
   if (isPower) {
     channel++;
@@ -133,8 +132,6 @@ function channelUp() {
 }
 
 function channelDown() {
-  console.log("teste", channel);
-
   if (isPower) {
     channel--;
     if (channel < 1) {
@@ -142,11 +139,6 @@ function channelDown() {
     }
     channelInfo.forEach((info) => {
       if (info.channel == channel) {
-        displayChn.innerHTML = `<i 
-             class="fa-solid fa-caret-right" 
-             style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">
-             Channel ${info.channel}
-          </i>`;
         tela.style.backgroundImage = info.image;
 
         setTimeout(() => {
@@ -158,7 +150,6 @@ function channelDown() {
 }
 
 // Volume //
-
 function volumeUp() {
   if (isPower) {
     if (volume < 50) {
@@ -203,3 +194,6 @@ function volumeDown() {
     }
   }
 }
+
+
+//ToDO: separar melhor as funções e minimizar a resposta de cada uma: começar pelo display do volume e canal para que os códigos não se repitam tanto, depois criar uma função channelChange que vai ser responsável pela mudança de canal +/-, o mesmo será feita com volume, volumeChange.
