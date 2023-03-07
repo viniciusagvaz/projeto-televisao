@@ -193,7 +193,3 @@ function volumeDown() {
       }, 2000);
     }
   }
-}
-
-
-//ToDO: separar melhor as funções e minimizar a resposta de cada uma: começar pelo display do volume e canal para que os códigos não se repitam tanto, depois criar uma função channelChange que vai ser responsável pela mudança de canal +/-, o mesmo será feita com volume, volumeChange.
