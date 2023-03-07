@@ -193,4 +193,3 @@ function volumeDown() {
       }, 2000);
     }
   }
-}
