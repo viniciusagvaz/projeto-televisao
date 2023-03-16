@@ -177,6 +177,7 @@ function volumeDown() {
     displayTimeOut();
     changeVol();
   }
+<<<<<<< HEAD
 }
 
 // Display Time //
@@ -188,3 +189,5 @@ function displayTimeOut() {
 }
 
 //ToDO: separar melhor as funções e minimizar a resposta de cada uma: começar pelo display do volume e canal para que os códigos não se repitam tanto, depois criar uma função channelChange que vai ser responsável pela mudança de canal +/-, o mesmo será feita com volume, volumeChange.
+=======
+>>>>>>> db88cf09a84733aa5f029032a66e2256090d6bca
