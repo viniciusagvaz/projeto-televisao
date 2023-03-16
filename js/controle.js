@@ -86,19 +86,8 @@ function power() {
       channel = 1;
       tela.style.backgroundImage = channelInfo[0].image;
     }
-    channelInfo.forEach((info) => {
-      if (info.channel == channel) {
-        tela.style.backgroundImage = info.image;
-      }
-    });
-    displayChn.innerHTML = `<i class="fa-solid fa-caret-right"
-      style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">
-         Channel ${channel}
-      </i>`;
+    changeChannel()
     isPower = true;
-    setTimeout(() => {
-      displayChn.innerHTML = " ";
-    }, 1000);
   } else {
     localStorage.setItem("lastChannel", channel);
     tela.style.backgroundImage = "";
@@ -147,14 +136,10 @@ function channelDown() {
 function changeVol() {
   if (volume === 0) {
     displayVol.innerHTML = `<i class="fa-solid fa-volume-mute" 
-    style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">
+    style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)"> mute
   </i>`;
-  }
-  if (volume === 100) {
-    displayVol.innerHTML = `<i class="fa-solid fa-volume-high" 
-    style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">
-  MÁX</i>`;
-  } else {
+  
+  } else  {
     displayVol.innerHTML = `<i class="fa-solid fa-volume-low" style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">  ${volume}</i>`;
   }
   displayTimeOut();
