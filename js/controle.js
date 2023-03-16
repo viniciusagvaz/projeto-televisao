@@ -130,33 +130,34 @@ function channelUp() {
       channel = 1;
     }
     changeChannel();
-    displayTimeOut();
   }
 }
 
 function channelDown() {
   if (isPower) {
     channel--;
-    if (channel === 1) {
+    if (channel === 0) {
       channel = channelInfo.length;
     }
     changeChannel();
-    displayTimeOut();
   }
 }
 
 // Volume //
 function changeVol() {
-  if (volumeUp) {
-    displayVol.innerHTML = `<i class="fa-solid fa-volume-low" style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">  ${volume}</i>`;
-  }
   if (volume === 0) {
     displayVol.innerHTML = `<i class="fa-solid fa-volume-mute" 
     style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">
   </i>`;
-  } else {
-    displayVol.innerHTML = `<i class="fa-solid fa-volume-high" style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">  ${volume}</i>`;
   }
+  if (volume === 100) {
+    displayVol.innerHTML = `<i class="fa-solid fa-volume-high" 
+    style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">
+  MÁX</i>`;
+  } else {
+    displayVol.innerHTML = `<i class="fa-solid fa-volume-low" style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">  ${volume}</i>`;
+  }
+  displayTimeOut();
 }
 
 function volumeUp() {
@@ -165,7 +166,6 @@ function volumeUp() {
       volume += 5;
     }
     changeVol();
-    displayTimeOut();
   }
 }
 
@@ -174,10 +174,8 @@ function volumeDown() {
     if (volume > 0) {
       volume = volume - 5;
     }
-    displayTimeOut();
     changeVol();
   }
-<<<<<<< HEAD
 }
 
 // Display Time //
@@ -187,7 +185,3 @@ function displayTimeOut() {
     displayVol.innerHTML = " ";
   }, 2000);
 }
-
-//ToDO: separar melhor as funções e minimizar a resposta de cada uma: começar pelo display do volume e canal para que os códigos não se repitam tanto, depois criar uma função channelChange que vai ser responsável pela mudança de canal +/-, o mesmo será feita com volume, volumeChange.
-=======
->>>>>>> db88cf09a84733aa5f029032a66e2256090d6bca
