@@ -75,31 +75,19 @@ const channelInfo = [
   },
 ];
 
-let channelsChange = channelInfo.lastIndex("");
-
 // Power //
 function power() {
   if (!isPower) {
     let lastChannel = localStorage.getItem("lastChannel");
+
     if (lastChannel) {
       channel = parseInt(lastChannel);
     } else {
       channel = 1;
       tela.style.backgroundImage = channelInfo[0].image;
     }
-    channelInfo.forEach((info) => {
-      if (info.channel == channel) {
-        tela.style.backgroundImage = info.image;
-      }
-    });
-    displayChn.innerHTML = `<i class="fa-solid fa-caret-right"
-      style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">
-         Channel ${channel}
-      </i>`;
+    changeChannel()
     isPower = true;
-    setTimeout(() => {
-      displayChn.innerHTML = " ";
-    }, 1000);
   } else {
     localStorage.setItem("lastChannel", channel);
     tela.style.backgroundImage = "";
@@ -110,86 +98,75 @@ function power() {
 }
 
 // Channel //
+
+function changeChannel() {
+  channelInfo.forEach((info) => {
+    if (info.channel == channel) {
+      displayChn.innerHTML = `<i class="fa-solid fa-caret-right"
+           style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">
+           Channel ${info.channel}
+       </i>`;
+      tela.style.backgroundImage = info.image;
+    }
+  });
+  displayTimeOut();
+}
+
 function channelUp() {
   if (isPower) {
     channel++;
     if (channel > channelInfo.length) {
       channel = 1;
     }
-    channelInfo.forEach((info) => {
-      if (info.channel == channel) {
-        displayChn.innerHTML = `<i class="fa-solid fa-caret-right"
-             style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">
-             Channel ${info.channel}
-         </i>`;
-        tela.style.backgroundImage = info.image;
-        setTimeout(() => {
-          displayChn.innerHTML = " ";
-        }, 2000);
-      }
-    });
+    changeChannel();
   }
 }
 
 function channelDown() {
   if (isPower) {
     channel--;
-    if (channel < 1) {
-      channel = 14;
+    if (channel === 0) {
+      channel = channelInfo.length;
     }
-    channelInfo.forEach((info) => {
-      if (info.channel == channel) {
-        tela.style.backgroundImage = info.image;
-
-        setTimeout(() => {
-          displayChn.innerHTML = " ";
-        }, 2000);
-      }
-    });
+    changeChannel();
   }
 }
 
 // Volume //
+function changeVol() {
+  if (volume === 0) {
+    displayVol.innerHTML = `<i class="fa-solid fa-volume-mute" 
+    style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)"> mute
+  </i>`;
+  
+  } else  {
+    displayVol.innerHTML = `<i class="fa-solid fa-volume-low" style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">  ${volume}</i>`;
+  }
+  displayTimeOut();
+}
+
 function volumeUp() {
   if (isPower) {
-    if (volume < 50) {
+    if (volume < 100) {
       volume += 5;
-      displayVol.innerHTML = `<i class="fa-solid fa-volume-low" style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">  ${volume}</i>`;
-      setTimeout(() => {
-        displayVol.innerHTML = " ";
-      }, 2000);
-    } else if (volume < 100) {
-      volume += 5;
-      displayVol.innerHTML = `<i 
-            class="fa-solid fa-volume-high" 
-            style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)"> 
-            ${volume}
-          </i>`;
-      setTimeout(() => {
-        displayVol.innerHTML = " ";
-      }, 2000);
     }
+    changeVol();
   }
 }
 
 function volumeDown() {
   if (isPower) {
-    if (volume >= 5) {
-      volume -= 5;
-      displayVol.innerHTML = `<i 
-            class="fa-solid fa-volume-low" 
-            style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)"> 
-            ${volume}
-         </i>`;
-      setTimeout(() => {
-        displayVol.innerHTML = " ";
-      }, 2000);
-    } else {
-      displayVol.innerHTML = `<i class="fa-solid fa-volume-mute" 
-            style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">
-          </i>`;
-      setTimeout(() => {
-        displayVol.innerHTML = " ";
-      }, 2000);
+    if (volume > 0) {
+      volume = volume - 5;
     }
+    changeVol();
   }
+}
+
+// Display Time //
+function displayTimeOut() {
+  setTimeout(() => {
+    displayChn.innerHTML = " ";
+    displayVol.innerHTML = " ";
+  }, 2000);
+}
