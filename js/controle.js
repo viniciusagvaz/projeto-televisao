@@ -70,7 +70,7 @@ const channelInfo = [
 ];
 
 // Power //
-function power() {
+const power = () => {
 	if (!isPower) {
 		let lastChannel = localStorage.getItem("lastChannel");
 
@@ -93,7 +93,7 @@ function power() {
 
 // Channel //
 
-function changeChannel() {
+const changeChannel = () => {
 	channelInfo.forEach((info) => {
 		if (info.channel == channel) {
 			displayChn.innerHTML = `<i class="fa-solid fa-caret-right"
@@ -106,7 +106,7 @@ function changeChannel() {
 	displayTimeOut();
 }
 
-function channelUp() {
+const channelUp = () => {
 	if (isPower) {
 		channel++;
 		if (channel > channelInfo.length) {
@@ -116,7 +116,7 @@ function channelUp() {
 	}
 }
 
-function channelDown() {
+const channelDown = () => {
 	if (isPower) {
 		channel--;
 		if (channel === 0) {
@@ -127,7 +127,7 @@ function channelDown() {
 }
 
 // Volume //
-function changeVol() {
+const changeVol = () => {
 	if (isPower) {
 		if (volume === 0) {
 			displayVol.innerHTML = `<i class="fa-solid fa-volume-mute" 
@@ -140,14 +140,14 @@ function changeVol() {
 	}
 }
 
-function volumeUp() {
+const volumeUp = () => {
 	if (volume < 100) {
 		volume += 5;
 	}
 	changeVol();
 }
 
-function volumeDown() {
+const volumeDown = () => {
 	if (volume > 0) {
 		volume -= 5;
 	}
@@ -155,7 +155,7 @@ function volumeDown() {
 }
 
 // Display Time //
-function displayTimeOut() {
+const displayTimeOut = () => {
 	setTimeout(() => {
 		displayChn.innerHTML = " ";
 		displayVol.innerHTML = " ";
