@@ -99,10 +99,10 @@ section{
 
  
 .remote--body button:active{
-   box-shadow: inset -4px 4px 0 #222;
+   box-shadow: inset 1px 1px 0 #222;
 }
 
-@media screen and (max-width:780px){
+@media screen and (max-width:1200px){
   body{
     text-align: center;
     background-image: linear-gradient(to bottom,#000000,#444141,#000000);
