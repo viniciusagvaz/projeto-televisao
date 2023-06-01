@@ -55,7 +55,7 @@ const channelInfo = [
 	},
 	{
 		channel: 12,
-		image: "url(https://gifimage.net/wp-content/uploads/2017/09/anime-sunset-gif-5.gif)",
+		image: "url(https://gifdb.com/images/file/anime-food-eating-gohan-r69il4zn73kmj2de.gif)",
 	},
 	{
 		channel: 13,
@@ -108,6 +108,17 @@ const showChannel = () => {
 	displayTimeOut();
 };
 
+const showLastChannel = () => {
+	let lastChannel = localStorage.getItem("lastChannel");
+
+	if (lastChannel) {
+		channel = parseInt(lastChannel);
+	} else {
+		channel = 1;
+		tela.style.backgroundImage = channelInfo[0].image;
+	}
+};
+
 const channelUp = () => {
 	if (isPower) {
 		channel++;
@@ -128,16 +139,7 @@ const channelDown = () => {
 	}
 };
 
-const showLastChannel = () => {
-	let lastChannel = localStorage.getItem("lastChannel");
 
-	if (lastChannel) {
-		channel = parseInt(lastChannel);
-	} else {
-		channel = 1;
-		tela.style.backgroundImage = channelInfo[0].image;
-	}
-};
 
 // Volume Commands //
 
