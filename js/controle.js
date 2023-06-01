@@ -69,42 +69,44 @@ const channelInfo = [
 	},
 ];
 
-// Power //
+// Power Commands //
+
 const power = () => {
 	if (!isPower) {
-		let lastChannel = localStorage.getItem("lastChannel");
-
-		if (lastChannel) {
-			channel = parseInt(lastChannel);
-		} else {
-			channel = 1;
-			tela.style.backgroundImage = channelInfo[0].image;
-		}
-		changeChannel();
-		isPower = true;
+		powerOn();
 	} else {
-		localStorage.setItem("lastChannel", channel);
-		tela.style.backgroundImage = "";
-		isPower = false;
-		displayChn.innerHTML = " ";
-		displayVol.innerHTML = " ";
+		powerOff();
 	}
-}
+};
 
-// Channel //
+const powerOn = () => {
+	isPower = true;
+	showLastChannel();
+	showChannel();
+};
 
-const changeChannel = () => {
-	channelInfo.forEach((info) => {
-		if (info.channel == channel) {
+const powerOff = () => {
+	isPower = false;
+	tela.style.backgroundImage = "";
+	displayChn.innerHTML = " ";
+	displayVol.innerHTML = " ";
+	localStorage.setItem("lastChannel", channel);
+};
+
+// Channel Commands //
+
+const showChannel = () => {
+	channelInfo.forEach((channelNumber) => {
+		if (channelNumber.channel == channel) {
 			displayChn.innerHTML = `<i class="fa-solid fa-caret-right"
            style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">
-           Channel ${info.channel}
+           Channel ${channelNumber.channel}
        </i>`;
-			tela.style.backgroundImage = info.image;
+			tela.style.backgroundImage = channelNumber.image;
 		}
 	});
 	displayTimeOut();
-}
+};
 
 const channelUp = () => {
 	if (isPower) {
@@ -112,9 +114,9 @@ const channelUp = () => {
 		if (channel > channelInfo.length) {
 			channel = 1;
 		}
-		changeChannel();
+		showChannel();
 	}
-}
+};
 
 const channelDown = () => {
 	if (isPower) {
@@ -122,42 +124,59 @@ const channelDown = () => {
 		if (channel === 0) {
 			channel = channelInfo.length;
 		}
-		changeChannel();
+		showChannel();
 	}
-}
+};
 
-// Volume //
+const showLastChannel = () => {
+	let lastChannel = localStorage.getItem("lastChannel");
+
+	if (lastChannel) {
+		channel = parseInt(lastChannel);
+	} else {
+		channel = 1;
+		tela.style.backgroundImage = channelInfo[0].image;
+	}
+};
+
+// Volume Commands //
+
+const showVolume = () => {
+	if (volume === 0) {
+		displayVol.innerHTML = `<i class="fa-solid fa-volume-mute" 
+ style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)"> mute
+</i>`;
+	} else {
+		displayVol.innerHTML = `<i class="fa-solid fa-volume-low" style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">  ${volume}</i>`;
+	}
+};
+
 const changeVol = () => {
 	if (isPower) {
-		if (volume === 0) {
-			displayVol.innerHTML = `<i class="fa-solid fa-volume-mute" 
-    style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)"> mute
-  </i>`;
-		} else {
-			displayVol.innerHTML = `<i class="fa-solid fa-volume-low" style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">  ${volume}</i>`;
-		}
+		showVolume();
 		displayTimeOut();
 	}
-}
+};
 
 const volumeUp = () => {
 	if (volume < 100) {
 		volume += 5;
 	}
 	changeVol();
-}
+};
 
 const volumeDown = () => {
 	if (volume > 0) {
 		volume -= 5;
 	}
 	changeVol();
-}
+};
 
 // Display Time //
+
 const displayTimeOut = () => {
 	setTimeout(() => {
 		displayChn.innerHTML = " ";
 		displayVol.innerHTML = " ";
 	}, 2000);
-}
+};
