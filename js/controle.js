@@ -86,11 +86,13 @@ const powerOn = () => {
 };
 
 const powerOff = () => {
+   const getLastChannel = 	localStorage.setItem("lastChannel", channel); 
+   
 	isPower = false;
 	tela.style.backgroundImage = "";
 	displayChn.innerHTML = " ";
 	displayVol.innerHTML = " ";
-	localStorage.setItem("lastChannel", channel);
+   getLastChannel
 };
 
 // Channel Commands //
