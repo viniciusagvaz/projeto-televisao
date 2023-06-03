@@ -13,7 +13,7 @@ const channelInfo = [
 	},
 	{
 		channel: 2,
-		image: "url(https://i.makeagif.com/media/9-25-2015/Rm_mcZ.gif)",
+		image: "url(https://media.tenor.com/191k6_cls-YAAAAC/dinosaur-king-news-reporter.gif)",
 	},
 	{
 		channel: 3,
@@ -55,7 +55,7 @@ const channelInfo = [
 	},
 	{
 		channel: 12,
-		image: "url(https://gifdb.com/images/file/anime-food-eating-gohan-r69il4zn73kmj2de.gif)",
+		image: "url(https://gifimage.net/wp-content/uploads/2017/09/anime-sunset-gif-5.gif)",
 	},
 	{
 		channel: 13,
@@ -67,10 +67,13 @@ const channelInfo = [
 		image:
 			"url(http://78.media.tumblr.com/0ab602b708b22093a4e9989a4498bbdb/tumblr_p1uvzudrPx1rad1dao1_500.gif)",
 	},
+	{
+		channel: 15,
+		image: "url(https://i.makeagif.com/media/9-25-2015/Rm_mcZ.gif)",
+	},
 ];
 
-// Power Commands //
-
+// Power //
 const power = () => {
 	if (!isPower) {
 		powerOn();
@@ -81,21 +84,19 @@ const power = () => {
 
 const powerOn = () => {
 	isPower = true;
-	showLastChannel();
+	lastChannel();
 	showChannel();
 };
 
 const powerOff = () => {
-   const getLastChannel = 	localStorage.setItem("lastChannel", channel); 
-   
 	isPower = false;
+	localStorage.setItem("lastChannel", channel);
 	tela.style.backgroundImage = "";
 	displayChn.innerHTML = " ";
 	displayVol.innerHTML = " ";
-   getLastChannel
 };
 
-// Channel Commands //
+// Channel //
 
 const showChannel = () => {
 	channelInfo.forEach((channelNumber) => {
@@ -110,16 +111,9 @@ const showChannel = () => {
 	displayTimeOut();
 };
 
-const showLastChannel = () => {
-	let lastChannel = localStorage.getItem("lastChannel");
-
-	if (lastChannel) {
-		channel = parseInt(lastChannel);
-	} else {
-		channel = 1;
-		tela.style.backgroundImage = channelInfo[0].image;
-	}
-};
+const changeChannel = (channelUp, channelDown) =>{
+   
+} 
 
 const channelUp = () => {
 	if (isPower) {
@@ -141,9 +135,7 @@ const channelDown = () => {
 	}
 };
 
-
-
-// Volume Commands //
+// Volume //
 
 const showVolume = () => {
 	if (volume === 0) {
@@ -177,10 +169,21 @@ const volumeDown = () => {
 };
 
 // Display Time //
-
 const displayTimeOut = () => {
 	setTimeout(() => {
 		displayChn.innerHTML = " ";
 		displayVol.innerHTML = " ";
 	}, 2000);
+};
+
+// Last Channel //
+const lastChannel = () => {
+	let lastChannel = localStorage.getItem("lastChannel");
+
+	if (lastChannel) {
+		channel = parseInt(lastChannel);
+	} else {
+		channel = 1;
+		tela.style.backgroundImage = channelInfo[0].image;
+	}
 };
