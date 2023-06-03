@@ -17,7 +17,7 @@ const channelInfo = [
 	},
 	{
 		channel: 3,
-		image: "url(https://media1.giphy.com/media/oESgZ6uNs9xgQulYiK/giphy.gif)",
+		image: "url(https://64.media.tumblr.com/1e89ced13c29cf66f0fe23352bf30bb6/tumblr_moajifdbu31qeoe6zo2_500.gif)",
 	},
 	{
 		channel: 4,
@@ -43,7 +43,7 @@ const channelInfo = [
 	{
 		channel: 9,
 		image:
-			"url(https://64.media.tumblr.com/1e89ced13c29cf66f0fe23352bf30bb6/tumblr_moajifdbu31qeoe6zo2_500.gif)",
+			"url(https://media1.giphy.com/media/oESgZ6uNs9xgQulYiK/giphy.gif)",
 	},
 	{
 		channel: 10,
