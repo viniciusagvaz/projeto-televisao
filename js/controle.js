@@ -55,7 +55,7 @@ const channelInfo = [
 	},
 	{
 		channel: 12,
-		image: "url(https://gifimage.net/wp-content/uploads/2017/09/anime-sunset-gif-5.gif)",
+		image: "url(https://media.tenor.com/uOHj2K7TsQQAAAAC/dragon-ball-goku.gif)",
 	},
 	{
 		channel: 13,
