@@ -38,21 +38,22 @@
 
           <div class="remote--bottom d-flex justify-content-around text-center">
             <div class="volume--command d-flex flex-column gap-2">
-              <button class="vol+" type="button" onclick="volumeUp()">
+
+              <button class="volUp" type="button" onclick="changeVol.volumeUp()">
                 <i class="fa-solid fa-plus text-white"></i>
               </button>
 
-              <button class="vol-" type="button" onclick="volumeDown()">
+              <button class="volDown" type="button" onclick="changeVol.volumeDown()">
                 <i class="fa-solid fa-minus text-white"></i>
               </button>
             </div>
 
             <div class="channel--command d-flex flex-column gap-2">
-              <button class="channel-up" type="button" onclick="changeChannel.chnUp()">
+              <button class="channel-up" type="button" onclick="changeChannel.channelUp()">
                 <i class="fa-solid fa-chevron-up text-white"></i>
               </button>
 
-              <button class="channel-down" type="button" onclick="changeChannel.chnDown()">
+              <button class="channel-down" type="button" onclick="changeChannel.channelDown()">
                 <i class="fa-solid fa-chevron-down text-white"></i>
               </button>
             </div>

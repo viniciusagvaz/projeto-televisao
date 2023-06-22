@@ -96,8 +96,9 @@ const powerOff = () => {
    displayVol.innerHTML = " ";
 };
 
-// Channel //
 
+
+// Channel //
 const showChannel = () => {
    channelInfo.forEach((channelNumber) => {
       if (channelNumber.channel == channel) {
@@ -111,51 +112,28 @@ const showChannel = () => {
    displayTimeOut();
 };
 
-
-// const channelUp = () => {
-//    if (isPower) {
-//       channel++;
-//       if (channel > channelInfo.length) {
-//          channel = 1;
-//       }
-//       showChannel();
-//    }
-// };
-
-// const channelDown = () => {
-//    if (isPower) {
-//       channel--;
-//       if (channel === 0) {
-//          channel = channelInfo.length;
-//       }
-//       showChannel();
-//    }
-// };
-
-
 const changeChannel = {
-   chnUp() {
+   chUp() {
       document.querySelector('.channel-up')
-         if (isPower) {
-            channel++;
-            showChannel();
-         }
+      if (isPower) {
+         channel++;
+         showChannel();
+      }
    },
-   
-   chnDown() {
+
+   chDown() {
       document.querySelector('channel-down')
       if (isPower) {
          channel--;
          showChannel();
       }
-      
+
    }
 }
 
 
 
 // Volume //
-
 const showVolume = () => {
    if (volume === 0) {
       displayVol.innerHTML = `<i class="fa-solid fa-volume-mute" 
@@ -164,28 +142,31 @@ const showVolume = () => {
    } else {
       displayVol.innerHTML = `<i class="fa-solid fa-volume-low" style="background-image: linear-gradient(to bottom,#000000,#444141,#000000)">  ${volume}</i>`;
    }
+   displayTimeOut();
 };
 
-const changeVol = () => {
-   if (isPower) {
-      showVolume();
-      displayTimeOut();
+const changeVol = {
+   volumeUp() {
+      document.querySelector('.volUp')
+      if (isPower) {
+         if (volume < 100) {
+            volume += 5;
+         }
+         showVolume();
+      }
+   },
+   volumeDown() {
+      document.querySelector('.volDown')
+      if (isPower) {
+         if (volume > 0) {
+            volume -= 5;
+         }
+         showVolume();
+      }
    }
 };
 
-const volumeUp = () => {
-   if (volume < 100) {
-      volume += 5;
-   }
-   changeVol();
-};
 
-const volumeDown = () => {
-   if (volume > 0) {
-      volume -= 5;
-   }
-   changeVol();
-};
 
 // Display Time //
 const displayTimeOut = () => {
@@ -194,6 +175,8 @@ const displayTimeOut = () => {
       displayVol.innerHTML = " ";
    }, 2000);
 };
+
+
 
 // Last Channel //
 const lastChannel = () => {
