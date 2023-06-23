@@ -113,7 +113,7 @@ const showChannel = () => {
 };
 
 const changeChannel = {
-   chUp() {
+   channelUp() {
       document.querySelector('.channel-up')
       if (isPower) {
          channel++;
@@ -121,7 +121,7 @@ const changeChannel = {
       }
    },
 
-   chDown() {
+   channelDown() {
       document.querySelector('channel-down')
       if (isPower) {
          channel--;
