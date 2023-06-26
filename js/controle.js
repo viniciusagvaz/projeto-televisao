@@ -138,6 +138,7 @@ const changeChannel = {
    },
 
    channelDown() {
+   channelDown() {
       document.querySelector('channel-down')
       if (isPower) {
          channel--;
@@ -161,7 +162,7 @@ const showVolume = () => {
 
 const changeVol = {
    volumeUp() {
-      document.querySelector('.volUp')
+      document.querySelector('.volume-up')
       if (isPower) {
          if (volume < 100) {
             volume += 5;
@@ -171,7 +172,7 @@ const changeVol = {
    },
    
    volumeDown() {
-      document.querySelector('.volDown')
+      document.querySelector('.volume-down')
       if (isPower) {
          if (volume > 0) {
             volume -= 5;
