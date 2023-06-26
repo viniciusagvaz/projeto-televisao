@@ -73,6 +73,8 @@ const channelInfo = [
    },
 ];
 
+
+
 // Power //
 const power = () => {
    if (!isPower) {
@@ -84,8 +86,8 @@ const power = () => {
 
 const powerOn = () => {
    isPower = true;
-   showChannel();
    lastChannel();
+   showChannel();
 };
 
 const powerOff = () => {
@@ -112,20 +114,6 @@ const showChannel = () => {
    displayTimeOut();
 };
 
-const channelLooping = () => {
-   if (isPower) {
-      if (channel > channelInfo.length) {
-         channel = 1
-         showChannel()
-      }
-
-      if (channel === 0) {
-         channel = channelInfo.length
-         showChannel()
-      }
-   }
-}
-
 const changeChannel = {
    channelUp() {
       document.querySelector('.channel-up')
@@ -145,6 +133,32 @@ const changeChannel = {
       showChannel();
    }
 }
+
+const channelLooping = () => {
+   if (isPower) {
+      if (channel > channelInfo.length) {
+         channel = 1
+         showChannel()
+      }
+
+      if (channel === 0) {
+         channel = channelInfo.length
+         showChannel()
+      }
+   }
+}
+
+const lastChannel = () => {
+   let lastChannel = localStorage.getItem("lastChannel");
+
+   if (lastChannel) {
+      channel = parseInt(lastChannel);
+   } else {
+      channel = 1;
+      tela.style.backgroundImage = channelInfo[0].image;
+   }
+};
+
 
 
 // Volume //
@@ -189,18 +203,4 @@ const displayTimeOut = () => {
       displayChn.innerHTML = " ";
       displayVol.innerHTML = " ";
    }, 2000);
-};
-
-
-
-// Last Channel //
-const lastChannel = () => {
-   let lastChannel = localStorage.getItem("lastChannel");
-
-   if (lastChannel) {
-      channel = parseInt(lastChannel);
-   } else {
-      channel = 1;
-      tela.style.backgroundImage = channelInfo[0].image;
-   }
 };
