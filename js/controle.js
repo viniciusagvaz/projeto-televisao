@@ -128,7 +128,6 @@ const channelLooping = () => {
 
 const changeChannel = {
    channelUp() {
-
       document.querySelector('.channel-up')
       if (isPower) {
          channel++;
@@ -138,7 +137,6 @@ const changeChannel = {
    },
 
    channelDown() {
-   channelDown() {
       document.querySelector('channel-down')
       if (isPower) {
          channel--;
@@ -147,6 +145,7 @@ const changeChannel = {
       showChannel();
    }
 }
+
 
 // Volume //
 const showVolume = () => {
@@ -170,7 +169,7 @@ const changeVol = {
          showVolume();
       }
    },
-   
+
    volumeDown() {
       document.querySelector('.volume-down')
       if (isPower) {
