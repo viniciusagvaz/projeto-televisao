@@ -84,8 +84,8 @@ const power = () => {
 
 const powerOn = () => {
    isPower = true;
-   lastChannel();
    showChannel();
+   lastChannel();
 };
 
 const powerOff = () => {
@@ -112,26 +112,40 @@ const showChannel = () => {
    displayTimeOut();
 };
 
-const changeChannel = {
-   chUp() {
-      document.querySelector('.channel-up')
-      if (isPower) {
-         channel++;
-         showChannel();
-      }
-   },
-
-   chDown() {
-      document.querySelector('channel-down')
-      if (isPower) {
-         channel--;
-         showChannel();
+const channelLooping = () => {
+   if (isPower) {
+      if (channel > channelInfo.length) {
+         channel = 1
+         showChannel()
       }
 
+      if (channel === 0) {
+         channel = channelInfo.length
+         showChannel()
+      }
    }
 }
 
+const changeChannel = {
+   channelUp() {
 
+      document.querySelector('.channel-up')
+      if (isPower) {
+         channel++;
+      }
+      showChannel();
+      channelLooping();
+   },
+
+   channelDown() {
+      document.querySelector('channel-down')
+      if (isPower) {
+         channel--;
+      }
+      channelLooping();
+      showChannel();
+   }
+}
 
 // Volume //
 const showVolume = () => {
@@ -155,6 +169,7 @@ const changeVol = {
          showVolume();
       }
    },
+   
    volumeDown() {
       document.querySelector('.volDown')
       if (isPower) {
