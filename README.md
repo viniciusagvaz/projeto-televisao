@@ -1,9 +1,9 @@
 <h1>This is a Television Project</h1>
-<hr>
-<p>The project should work as if it was a tv with its remote to change channels and turn the volume up, down, and muted</p>
+<h2 align='center'>https://viniciusagvaz.github.io/projeto-televisao/</h2>
+<p align='center'>The project should work as if it was a tv with its remote to change channels and turn the volume up, down, and muted</p>
 
-Trying my best to reduce the CSS using Bootstrap, but maybe will add the CSS later with a more approach to it. We'll see.
+![image](https://github.com/viniciusagvaz/projeto-televisao/assets/109700331/53216aae-c030-4b19-8b7f-129a8ab72f23)
+
 
 I'm pretty satisfied for now, but of course, there's always room for improvement
 
-<a>https://viniciusagvaz.github.io/projeto-televisao/</a>
